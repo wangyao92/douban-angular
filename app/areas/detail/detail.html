@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#">
+                    <img class="media-object" ng-src="{{detail.images.large}}" alt="{{detail.title}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h2 class="media-heading text-left">{{detail.title}}</h3>
+                <h4 ng-show="!loading">上映时间: {{detail.year}}</h4>
+                <h4 ng-show="!loading">内容详情: </h4>
+                <p>{{detail.summary}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-show="loading" class="loading">
+    <div class="spinner">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+</div>
+
+
+

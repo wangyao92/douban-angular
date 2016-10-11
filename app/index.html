@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>豆瓣电影</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./css/loading.css">
+</head>
+<body ng-app="mainModule" ng-controller="mainController">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">豆瓣电影</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search..." ng-keyup="onKey($event)" ng-model="searchText">
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li ng-class="{active:isActive('in_theaters')}"><a href="#/list/in_theaters">正在热映</a></li>
+        <li ng-class="{active:isActive('coming_soon')}"><a href="#/list/coming_soon">即将上映</a></li>
+        <li ng-class="{active:isActive('top250')}"><a href="#/list/top250">Top250</a></li>
+      </ul>
+    </div>
+    <div ui-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main ">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <!--引包-->
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  <!--自定义js-->
+  <script src="./app.js"></script>
+  <script src="./config.js"></script>
+  <script src="./util/crossdomain_service.js"></script>
+  <script src="./areas/list/list_controller.js"></script>
+  <script src="./areas/list/list_service.js"></script>
+  <script src="./areas/detail/detail_controller.js"></script>
+  <script src="./areas/detail/detail_service.js"></script>
+
+</body>
+</html>
